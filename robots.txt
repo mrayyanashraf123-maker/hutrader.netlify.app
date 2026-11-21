@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Filter state is not worth crawling, but product deep links are — they are the
+# URLs the structured data advertises, so they must stay reachable.
+# The longest matching rule wins (RFC 9309), so each allow rule below is
+# longer than the disallow it overrides.
+Disallow: /store.html?cat=
+Disallow: /store.html?q=
+Disallow: /store.html?sort=
+Allow: /store.html?cat=laptops&item=
+Allow: /store.html?cat=gpus&item=
+Allow: /store.html?cat=builds&item=
+Allow: /store.html?cat=parts&item=
+
+# Internal workspace tools must never be crawled or indexed.
+Disallow: /product-manager.html
+Disallow: /product-manager/
+Disallow: /manager.html
+
+Sitemap: https://hutrader.netlify.app/sitemap.xml

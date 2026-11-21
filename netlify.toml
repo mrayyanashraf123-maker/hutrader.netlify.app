@@ -1,0 +1,22 @@
+# The product manager is an internal workspace tool and lives in the repository
+# root, never in this folder. If a copy ever ends up here it must answer 404
+# instead of being served or indexed.
+[[redirects]]
+  from = "/product-manager.html"
+  to = "/index.html"
+  status = 404
+
+[[redirects]]
+  from = "/product-manager/"
+  to = "/index.html"
+  status = 404
+
+[[redirects]]
+  from = "/manager.html"
+  to = "/index.html"
+  status = 404
+
+[[headers]]
+  for = "/product-manager.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
